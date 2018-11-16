@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using ASP.NET_Core_Intermediate_Course.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace ASP.NET_Core_Intermediate_Course
 {
@@ -42,6 +43,8 @@ namespace ASP.NET_Core_Intermediate_Course
 
 
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+			services.AddSingleton<IEmailSender, EmailSender>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
